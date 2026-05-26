@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --base: 248 249 255;
+  --surface: 255 255 255;
+  --ink: 18 26 44;
+  --muted: 90 102 128;
+  --brand: 47 106 255;
+  --brand-2: 0 193 165;
+  --accent: 255 154 64;
+}
+
+.dark {
+  color-scheme: dark;
+  --base: 8 11 20;
+  --surface: 15 20 32;
+  --ink: 229 234 246;
+  --muted: 153 166 192;
+  --brand: 121 156 255;
+  --brand-2: 61 229 196;
+  --accent: 255 182 98;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  background: radial-gradient(circle at top left, rgba(67, 125, 255, 0.25), transparent 45%),
+    radial-gradient(circle at 20% 20%, rgba(0, 204, 194, 0.2), transparent 45%),
+    rgb(var(--base));
+  color: rgb(var(--ink));
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .grid-surface {
+    background-image: var(--grid-bg);
+    background-size: 40px 40px;
+    background-position: center;
+  }
+
+  .fade-up {
+    animation: fadeUp 0.9s ease forwards;
+  }
+
+  .float-slow {
+    animation: floatSlow 6s ease-in-out infinite;
+  }
+
+  .pulse-glow {
+    animation: pulseGlow 3.5s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(80, 140, 255, 0.35);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
