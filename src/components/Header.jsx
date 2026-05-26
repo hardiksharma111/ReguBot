@@ -1,5 +1,4 @@
 import React from "react";
-import { Sun, Moon, Bell, User } from "lucide-react";
 
 export default function Header({ theme, setTheme }) {
   return (
@@ -12,16 +11,14 @@ export default function Header({ theme, setTheme }) {
             className="rounded-full border border-surface bg-surface px-3 py-2"
             aria-label="Toggle theme"
           >
-            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            {theme === "dark" ? "☀️" : "🌙"}
           </button>
 
-          <div className="relative">
-            <Bell className="h-5 w-5 text-muted" />
+          <div className="relative text-ink/60 text-lg">🔔
             <span className="absolute -top-0.5 -right-1 h-2 w-2 rounded-full bg-red-500 ring-2 ring-base" />
           </div>
 
           <div className="flex items-center gap-2 rounded-full border border-surface bg-surface px-3 py-1">
-            <User className="h-4 w-4 text-muted" />
             <div className="text-sm font-medium">Compliance Officer</div>
           </div>
         </div>

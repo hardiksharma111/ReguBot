@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MoreHorizontal } from "lucide-react";
+import { motion } from "framer-motion";
 
 const deptColors = {
   KYC: "bg-indigo-100 text-indigo-700",
@@ -13,7 +13,12 @@ export default function KanbanCard({ card, onOpen, onMove }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="rounded-2xl border border-surface bg-surface p-3 shadow-sm group">
+    <motion.div
+      layout
+      whileHover={{ scale: 1.01 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      className="rounded-2xl border border-surface bg-surface/90 p-3 shadow-md group"
+    >
       <div className="flex items-start justify-between">
         <div>
           <div className="flex items-center gap-2">
@@ -38,10 +43,10 @@ export default function KanbanCard({ card, onOpen, onMove }) {
               <option>Awaiting Validation</option>
               <option>Completed</option>
             </select>
-            <button onClick={()=>setOpen(o=>!o)} className="p-1 text-muted"><MoreHorizontal className="h-4 w-4"/></button>
+            <button onClick={()=>setOpen(o=>!o)} className="p-1 text-muted">•••</button>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

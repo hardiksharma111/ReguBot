@@ -1,5 +1,4 @@
 import React from "react";
-import { ArchiveBox, List, Settings, CheckSquare } from "lucide-react";
 
 export default function Sidebar({ status = "Prototype Mode" }) {
   return (
@@ -20,18 +19,10 @@ export default function Sidebar({ status = "Prototype Mode" }) {
 
       <nav className="mt-8 px-2">
         <ul className="space-y-1 text-sm">
-          <li className="rounded-md px-3 py-2 hover:bg-base/60 cursor-pointer flex items-center gap-3">
-            <List className="h-4 w-4 text-muted" /> Dashboard
-          </li>
-          <li className="rounded-md px-3 py-2 hover:bg-base/60 cursor-pointer flex items-center gap-3">
-            <ArchiveBox className="h-4 w-4 text-muted" /> Active Circulars
-          </li>
-          <li className="rounded-md px-3 py-2 hover:bg-base/60 cursor-pointer flex items-center gap-3">
-            <CheckSquare className="h-4 w-4 text-muted" /> AI Evidence Validator
-          </li>
-          <li className="rounded-md px-3 py-2 hover:bg-base/60 cursor-pointer flex items-center gap-3">
-            <Settings className="h-4 w-4 text-muted" /> Settings
-          </li>
+          <li className="rounded-md px-3 py-2 hover:bg-base/60 cursor-pointer flex items-center gap-3">📋 Dashboard</li>
+          <li className="rounded-md px-3 py-2 hover:bg-base/60 cursor-pointer flex items-center gap-3">📚 Active Circulars</li>
+          <li className="rounded-md px-3 py-2 hover:bg-base/60 cursor-pointer flex items-center gap-3">✅ AI Evidence Validator</li>
+          <li className="rounded-md px-3 py-2 hover:bg-base/60 cursor-pointer flex items-center gap-3">⚙️ Settings</li>
         </ul>
       </nav>
 
